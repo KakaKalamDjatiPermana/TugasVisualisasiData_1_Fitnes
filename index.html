@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Analisis Fitness</title>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Dashboard Analisis Efektivitas Latihan</h1>
+    </header>
+
+    <div class="container">
+      <div class="controls">
+        <div class="filter-group">
+          <label for="workoutTypeFilter">Pilih Tipe Latihan:</label>
+          <select id="workoutTypeFilter">
+            <option value="All">Semua Tipe</option>
+            <option value="Strength">Strength</option>
+            <option value="HIIT">HIIT</option>
+            <option value="Cardio">Cardio</option>
+            <option value="Yoga">Yoga</option>
+          </select>
+        </div>
+
+        <div class="student-info">
+          <p><strong>Nama:</strong> Kaka Kalam Djati Permana</p>
+          <p><strong>NIM:</strong> 220660121112</p>
+        </div>
+
+        <div class="placeholder"></div>
+      </div>
+      <div class="chart-grid">
+        <div class="chart-box" id="chart1-container">
+          <h2>Top 10 Latihan Pembakar Kalori</h2>
+          <div id="barChart"></div>
+          <p class="explanation">
+            Grafik ini menunjukkan 10 latihan teratas yang membakar kalori
+            paling banyak. Gunakan filter untuk melihat latihan teratas untuk
+            tipe tertentu.
+          </p>
+        </div>
+
+        <div class="chart-box" id="chart2-container">
+          <h2>Distribusi Usia Pengguna</h2>
+          <div id="histogramChart"></div>
+          <p class="explanation">
+            Histogram ini menunjukkan distribusi frekuensi usia pengguna dalam
+            dataset. Gunakan filter untuk melihat rentang usia dominan untuk
+            tipe latihan tertentu.
+          </p>
+        </div>
+
+        <div class="chart-box" id="chart3-container">
+          <h2>Proporsi Tingkat Kesulitan Latihan</h2>
+          <div id="pieChart"></div>
+          <p class="explanation">
+            Grafik ini menunjukkan proporsi latihan berdasarkan tingkat
+            kesulitannya (Beginner, Intermediate, Advanced).
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

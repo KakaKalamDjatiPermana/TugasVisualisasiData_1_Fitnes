@@ -1,0 +1,154 @@
+/* Pengaturan Dasar */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7f6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+  padding: 25px 40px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.container {
+  max-width: 1600px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+/* Kontrol Filter (3 Kolom) */
+.controls {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Kolom 1: Filter Kiri */
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-self: start;
+}
+
+.controls label {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.controls select {
+  font-size: 1rem;
+  padding: 10px 15px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.controls select:hover {
+  border-color: #667eea;
+}
+
+/* Kolom 2: Info Tengah */
+.student-info {
+  justify-self: center;
+  text-align: center;
+}
+
+.student-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 500;
+  line-height: 1.5;
+}
+/* Kolom 3 (.placeholder) tidak perlu style */
+
+/* Grid untuk Chart (Layout 2 Baris) */
+.chart-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Baris 1: 2 kolom (lebar & kecil) */
+  gap: 20px;
+}
+
+.chart-box {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Baris 2: Histogram (Lebar Penuh) */
+#chart2-container {
+  grid-column: 1 / span 2; /* Membuatnya span 2 kolom */
+}
+
+.chart-box h2 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.explanation {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 15px;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* Desain Responsif untuk Mobile */
+@media (max-width: 992px) {
+  .chart-grid {
+    /* Ubah jadi 1 kolom di layar kecil */
+    grid-template-columns: 1fr;
+  }
+
+  #chart2-container {
+    /* Kembalikan ke 1 kolom */
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .controls {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+  .student-info {
+    justify-self: start;
+    text-align: left;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+    width: 100%;
+  }
+  .placeholder {
+    display: none;
+  }
+}
